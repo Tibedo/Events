@@ -1,0 +1,14 @@
+
+body {
+    display: flex;
+    justify-content: space-around;
+}
+.displayedsquare-wrapper, .displayedsquare {
+    width: 200px;
+    height: 200px;
+   
+}
+
+.displayedsquare {
+    margin-top: 300px;
+}
