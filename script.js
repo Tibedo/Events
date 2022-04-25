@@ -1,13 +1,17 @@
 const body = document.querySelector("body")
+const colors = ["black", "yellow", "red"];
 
 
+
+
+// TARGET SQUARES COLOR
 function clicked(e) {
     const bgColor = e.target.style.backgroundColor
     alert(bgColor)
 }
 
 
-
+// RANDOM COLOR
 function randomColor() {
     const rgb = Math.floor(Math.random() * 256)
     const rgb2 = Math.floor(Math.random() * 256)
@@ -17,12 +21,7 @@ function randomColor() {
 
 
 
-function clicked(e) {
-    const bgColor = e.target.style.backgroundColor
-    alert(bgColor)
-    
-}
-
+// LIST
 function list() {
     const ul = document.createElement("ul")
     const li = document.createElement("li")
@@ -35,22 +34,7 @@ function list() {
 }
 
 
-function copie() {
-
-    const copy = document.querySelector(".displayedsquare-wrapper")  
-    copy.className = "displayedsquare"
-    
-    
-    copy.addEventListener("click", clicked)
-    div.addEventListener("click", copie)
-
-   // copy.addEventListener("click", list)
-
-    document.body.appendChild(copy)
-}
-
-
-
+// CREATE SQUARES
 function square() {
 
 for (let i = 0; i < 3; i++) {
@@ -71,6 +55,57 @@ square()
 
 
 
+
+// CREATE SQUARES COPY
+function copie() {
+    const div = document.getElementsByTagName("div")
+    const copy = document.querySelector(".displayedsquare-wrapper")  
+    copy.className = "displayedsquare"
+    
+    
+    copy.addEventListener("click", clicked)
+    div.addEventListener("click", copie)
+   // copy.addEventListener("click", list)
+
+    document.body.appendChild(copy)
+}
+
+
+
+// BODY BACKGROUND COLOR
+function backBody() {
+
+ body.addEventListener("keydown", checkKeyPress);
+
+
+ function checkKeyPress (key){
+    if (key.keyCode == "32") {
+        body.style.backgroundColor = randomColor()
+     }
+    
+  }
+
+}
+
+backBody()
+
+
+
+
+function deleteSquare() {
+    
+    body.addEventListener("keydown", keyS);
+   
+    function keyS(key){
+       if (key.keyCode == "83") {
+           div.style.backgroundColor = "none"
+        }
+      
+     }
+     
+   }
+   
+   deleteSquare()
 
 
 /* function duplicate() {
